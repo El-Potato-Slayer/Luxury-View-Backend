@@ -26,10 +26,10 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # gem 'rack-cors'
 
 group :test do
-  gem 'database_cleaner'
-  gem 'factory_bot_rails', '~> 6.1'
-  gem 'faker'
-  gem 'shoulda-matchers', '~> 4.5', '>= 4.5.1'
+  gem 'database_cleaner', '~> 2.0', '>= 2.0.1'
+  gem 'factory_bot_rails', '~> 6.2'
+  gem 'faker', '~> 2.18'
+  gem 'shoulda-matchers', '~> 5.0'
 end
 
 group :development, :test do
