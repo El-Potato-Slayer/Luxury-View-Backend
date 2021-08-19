@@ -4,7 +4,7 @@ RSpec.describe "Properties", type: :request do
   let!(:properties) { create_list(:property, 10) }
   let(:property_id) { properties.first.id }
   describe "GET /properties" do
-    before { get '/api/v1/properties'}
+    before { get '/api/v1/properties' }
     it 'returns properties' do
       expect(json).not_to be_empty
       expect(json.size).to eq(10)
@@ -15,7 +15,7 @@ RSpec.describe "Properties", type: :request do
     end
   end
   describe "GET /properties/:id" do
-    before { get "/api/v1/properties/#{property_id}"}
+    before { get "/api/v1/properties/#{property_id}" }
     context 'when property exists' do
       it 'returns status code 200' do
         expect(response).to have_http_status(200)
@@ -84,7 +84,7 @@ RSpec.describe "Properties", type: :request do
       end
     end
   end
-  
+
   describe 'DELETE /properties/:id' do
     before { delete "/api/v1/properties/#{property_id}" }
     context 'when the property exists' do

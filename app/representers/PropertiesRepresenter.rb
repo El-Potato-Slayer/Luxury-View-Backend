@@ -2,6 +2,7 @@ class PropertiesRepresenter
   def initialize(properties)
     @properties = properties
   end
+
   def as_json
     properties.map do |property|
       {
@@ -17,6 +18,8 @@ class PropertiesRepresenter
       }
     end
   end
+
   private
+
   attr_reader :properties
- end
+end

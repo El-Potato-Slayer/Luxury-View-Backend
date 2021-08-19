@@ -45,7 +45,7 @@ RSpec.describe "Agents", type: :request do
   end
 
   describe 'DELETE /agents/:id' do
-    before { delete "/api/v1/agents/#{agent_id}"}
+    before { delete "/api/v1/agents/#{agent_id}" }
     it 'returns status code 204' do
       expect(response).to have_http_status(204)
     end

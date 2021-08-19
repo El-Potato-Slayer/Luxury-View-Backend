@@ -2,10 +2,10 @@ module Api
   module V1
     class PropertiesController < ApplicationController
       before_action :set_property, only: %i[update show destroy]
-      
+
       def index
         @properties = Property.all
-        render json: PropertiesRepresenter.new(@properties).as_json 
+        render json: PropertiesRepresenter.new(@properties).as_json
       end
 
       def create
@@ -32,9 +32,11 @@ module Api
       end
 
       private
+
       def property_params
         params.permit(:name, :description, :price, :address, :floor_area, :land_area, :agent_id)
       end
+
       def set_property
         @property = Property.find(params[:id])
       end

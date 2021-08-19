@@ -2,8 +2,9 @@ class PropertyRepresenter
   def initialize(property)
     @property = property
   end
+
   def as_json
-    {     
+    {
       id: property.id,
       name: property.name,
       description: property.description,
@@ -15,6 +16,8 @@ class PropertyRepresenter
       # category: Category.find(book.id).name,
     }
   end
+
   private
+
   attr_reader :property
- end
+end
