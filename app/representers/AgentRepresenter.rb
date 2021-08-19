@@ -2,6 +2,7 @@ class AgentRepresenter
   def initialize(agent)
     @agent = agent
   end
+
   def as_json
     {
       id: agent.id,
@@ -12,6 +13,8 @@ class AgentRepresenter
       picture: agent.picture,
     }
   end
+
   private
+
   attr_reader :agent
- end
+end

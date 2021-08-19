@@ -2,8 +2,9 @@ class AgentsRepresenter
   def initialize(agents)
     @agents = agents
   end
+
   def as_json
-    agents.map do |agent| 
+    agents.map do |agent|
       {
         id: agent.id,
         first_name: agent.first_name,
@@ -14,6 +15,8 @@ class AgentsRepresenter
       }
     end
   end
+
   private
+
   attr_reader :agents
- end
+end

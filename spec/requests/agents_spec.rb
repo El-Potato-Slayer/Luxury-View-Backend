@@ -15,13 +15,15 @@ RSpec.describe "Agents", type: :request do
   end
 
   describe 'POST /agent' do
-    let(:valid_name) { { 
+    let(:valid_name) {
+      {
         first_name: 'Jack',
         last_name: 'Jackson',
         email: 'a@a.com',
         number: '0786321456',
         picture: 'wwwwwwwwww'
-      } }
+      }
+    }
     context 'when the request is valid' do
       before { post '/api/v1/agents', params: valid_name }
       it 'creates a category' do
@@ -39,6 +41,13 @@ RSpec.describe "Agents", type: :request do
       it 'returns validation failure message' do
         expect(response.body).to include('is too short (minimum is 3 characters)')
       end
+    end
+  end
+
+  describe 'DELETE /agents/:id' do
+    before { delete "/api/v1/agents/#{agent_id}"}
+    it 'returns status code 204' do
+      expect(response).to have_http_status(204)
     end
   end
 end
