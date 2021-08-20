@@ -28,4 +28,7 @@ RSpec.describe Property, type: :model do
   it {
     should validate_presence_of(:land_area)
   }
+  describe 'Associations' do
+    it { should have_many(:appointments) }
+  end
 end
