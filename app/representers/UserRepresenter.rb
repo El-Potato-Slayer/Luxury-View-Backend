@@ -2,6 +2,7 @@ class UserRepresenter
   def initialize(user)
     @user = user
   end
+
   def as_json
     {
       id: user.id,
@@ -13,6 +14,8 @@ class UserRepresenter
       token: AuthenticationTokenService.call(user.id)
     }
   end
+
   private
+
   attr_reader :user
- end
+end

@@ -35,7 +35,7 @@ RSpec.describe "Appointments", type: :request do
       end
     end
   end
-  
+
   describe 'POST /appointments/:id' do
     let!(:temp_user) { create(:user) }
     let!(:temp_property) { create(:property) }

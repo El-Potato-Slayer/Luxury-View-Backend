@@ -15,5 +15,6 @@ class AppointmentsRepresenter
   end
 
   private
+
   attr_reader :appointments
 end
