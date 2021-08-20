@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :user do
-    username { Faker::Internet.username(specifier: 5..10) }
-    email { Faker::Name.first_name+'@crackerbucks.com' }
+    username { Faker::Internet.username(specifier: 5..10)+ Random.new.rand(100000).to_s }
+    email { Faker::Internet.email }
     password { 'password' }
-    first_name { Faker.Name.first_name(specifier: 3..10) }
-    last_name { Faker.Name.last_name(specifier: 3..10) }
+    first_name { Faker::Name.name }
+    last_name { Faker::Name.name }
     isAdmin { false }
   end
 end
