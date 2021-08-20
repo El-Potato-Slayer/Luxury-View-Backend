@@ -7,13 +7,17 @@ RSpec.describe "Users", type: :request do
         user: { 
           username: 'user1', email: 'test@test.com',
           password: 'password', first_name: 'Yujiro',
-          last_name: 'Hanma', isAdmin: 'false'
+          last_name: 'Hanma'
         } 
       }
       expect(response).to have_http_status(:created)
       expect(json).to eq({
                            'id' => User.last.id,
                            'username' => 'user1',
+                           'email' => 'test@test.com',
+                           'first_name' => 'Yujiro',
+                           'last_name' => 'Hanma',
+                           'isAdmin' => false,
                            'token' => AuthenticationTokenService.call(User.last.id)
                          })
     end
