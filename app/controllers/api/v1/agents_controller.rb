@@ -1,7 +1,7 @@
 module Api
   module V1
     class AgentsController < ApplicationController
-      before_action :set_agent, only: :destroy
+      before_action :set_agent, only: %i[update show destroy]
 
       def index
         @agents = Agent.all
@@ -15,6 +15,15 @@ module Api
         else
           render json: @agent.errors, status: :unprocessable_entity
         end
+      end
+
+      def show
+        render json: AgentRepresenter.new(@agent).as_json
+      end
+
+      def update
+        @agent.update(agent_params)
+        head :no_content
       end
 
       # DELETE /categories/:id
