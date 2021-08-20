@@ -1,15 +1,16 @@
 module Api
   module V1
     class AppointmentsController < ApplicationController
+      before_action :authenticate_request!
       before_action :set_appointment, only: %i[update show destroy]
 
       def index
-        @appointments = Appointment.all
+        @appointments = current_user!.appointments
         render json: AppointmentsRepresenter.new(@appointments).as_json
       end
 
       def create
-        @appointment = Appointment.create(appointment_params)
+        @appointment = current_user!.appointments.create(appointment_params)
         if @appointment.save
           render json: AppointmentRepresenter.new(@appointment).as_json, status: :created
         else
