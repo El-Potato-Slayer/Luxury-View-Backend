@@ -11,6 +11,7 @@ class AgentRepresenter
       email: agent.email,
       number: agent.number,
       picture: agent.picture,
+      properties: agent.properties
     }
   end
 
