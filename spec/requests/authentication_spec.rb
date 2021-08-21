@@ -4,7 +4,7 @@ RSpec.describe "Authentications", type: :request do
   describe 'POST /login' do
     let(:user) {
       FactoryBot.create(:user, username: 'user1', email: 'test@test.com', password: 'password', first_name: 'Yujiro',
-                               last_name: 'Hanma', isAdmin: 'false')
+                               last_name: 'Hanma', is_admin: 'false')
     }
     it 'authenticates the user' do
       post '/api/v1/login', params: { username: user.username, password: 'password' }
@@ -15,7 +15,7 @@ RSpec.describe "Authentications", type: :request do
                            'email' => 'test@test.com',
                            'first_name' => 'Yujiro',
                            'last_name' => 'Hanma',
-                           'isAdmin' => false,
+                           'is_admin' => false,
                            'token' => AuthenticationTokenService.call(user.id)
                          })
     end

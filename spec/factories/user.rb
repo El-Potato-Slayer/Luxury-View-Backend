@@ -5,6 +5,6 @@ FactoryBot.define do
     password { 'password' }
     first_name { Faker::Name.name }
     last_name { Faker::Name.name }
-    isAdmin { false }
+    is_admin { false }
   end
 end
