@@ -17,6 +17,12 @@ RSpec.describe Property, type: :model do
     should validate_length_of(:description).is_at_least(3)
   }
   it {
+    should validate_presence_of(:picture)
+  }
+  it {
+    should validate_length_of(:picture).is_at_least(3)
+  }
+  it {
     should validate_presence_of(:address)
   }
   it {

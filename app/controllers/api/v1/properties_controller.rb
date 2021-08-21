@@ -34,7 +34,7 @@ module Api
       private
 
       def property_params
-        params.permit(:name, :description, :price, :address, :floor_area, :land_area, :agent_id)
+        params.permit(:name, :picture, :description, :price, :address, :floor_area, :land_area, :agent_id)
       end
 
       def set_property

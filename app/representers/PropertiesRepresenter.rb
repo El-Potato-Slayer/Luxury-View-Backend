@@ -9,6 +9,7 @@ class PropertiesRepresenter
         id: property.id,
         name: property.name,
         description: property.description,
+        picture: property.picture,
         price: property.price,
         address: property.address,
         floor_area: property.floor_area,

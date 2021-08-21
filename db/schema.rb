@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2021_08_21_170527) do
   create_table "properties", force: :cascade do |t|
     t.bigint "agent_id", null: false
     t.string "name"
+    t.string "picture"
     t.text "description"
     t.decimal "price"
     t.string "address"

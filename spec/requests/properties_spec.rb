@@ -39,10 +39,14 @@ RSpec.describe "Properties", type: :request do
     let!(:history) { create(:agent) }
     let(:valid_attributes) do
       {
+        picture: 'wwwwwwwwww',
         name: 'Caelesti',
-        description: "This is a house", price: 500,
-        address: '25 Fuffels Ave', floor_area: 500,
-        land_area: 100, agent_id: history.id
+        description: 'This is a house',
+        price: 500,
+        address: '25 Fuffels Ave',
+        floor_area: 500,
+        land_area: 100,
+        agent_id: history.id
       }
     end
     context 'when request attributes are valid' do
