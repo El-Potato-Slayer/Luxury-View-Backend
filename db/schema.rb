@@ -11,6 +11,10 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2021_08_20_082106) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "agents", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -22,8 +26,8 @@ ActiveRecord::Schema.define(version: 2021_08_20_082106) do
   end
 
   create_table "appointments", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "property_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "property_id", null: false
     t.datetime "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -32,7 +36,7 @@ ActiveRecord::Schema.define(version: 2021_08_20_082106) do
   end
 
   create_table "properties", force: :cascade do |t|
-    t.integer "agent_id", null: false
+    t.bigint "agent_id", null: false
     t.string "name"
     t.text "description"
     t.decimal "price"

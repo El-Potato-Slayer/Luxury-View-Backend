@@ -3,9 +3,9 @@ FactoryBot.define do
     agent { create(:agent) }
     name { Faker::Name.name }
     description { Faker::Name.name }
-    price { Faker::Number.number }
+    price { Faker::Number.between(from: 1000, to: 100000) }
     address { Faker::Name.name }
-    land_area { Faker::Number.number }
-    floor_area { Faker::Number.number }
+    land_area { Faker::Number.between(from: 1000, to: 100000) }
+    floor_area { Faker::Number.between(from: 1000, to: 100000) }
   end
 end
