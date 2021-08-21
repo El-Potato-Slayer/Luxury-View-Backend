@@ -7,7 +7,7 @@ module Api
         @rooms = Room.all
         render json: RoomsRepresenter.new(@rooms).as_json
       end
-      
+
       def create
         @room = Room.create(room_params)
         if @room.save

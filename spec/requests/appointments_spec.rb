@@ -79,8 +79,9 @@ RSpec.describe "Appointments", type: :request do
     let(:new_date) { DateTime.now.utc }
     let(:valid_attributes) { { date: new_date } }
     before {
-      put "/api/v1/appointments/#{appointment_id}", params: valid_attributes,
-                                                    headers: { 'Authorization' => AuthenticationTokenService.call(user.id) }
+      put "/api/v1/appointments/#{appointment_id}",
+          params: valid_attributes,
+          headers: { 'Authorization' => AuthenticationTokenService.call(user.id) }
     }
     context 'when the appointment exists' do
       it 'returns status code 204' do
