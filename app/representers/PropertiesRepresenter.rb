@@ -13,8 +13,8 @@ class PropertiesRepresenter
         address: property.address,
         floor_area: property.floor_area,
         land_area: property.land_area,
-        agent: property.agent
-        # category: Category.find(book.id).name,
+        agent: property.agent,
+        rooms: property.rooms.exclude_property_id
       }
     end
   end
