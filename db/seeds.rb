@@ -1,5 +1,5 @@
-User.create(username: 'Nappa', email: 'nappa@dappa.com', password: '123456', first_name: 'Nappa', last_name: 'Freya', isAdmin: false)
-User.create(username: 'Hoppie', email: 'hoppie@doppie.com', password: '123456', first_name: 'Hoppie', last_name: 'Willemse', isAdmin: false)
+User.create(username: 'Nappa', email: 'nappa@dappa.com', password: '123456', first_name: 'Nappa', last_name: 'Freya', is_admin: false)
+User.create(username: 'Hoppie', email: 'hoppie@doppie.com', password: '123456', first_name: 'Hoppie', last_name: 'Willemse', is_admin: false)
 
 Agent.create(first_name: 'Joshua', last_name: 'Door', email: 'joshuadoor@gmail.com', number: '0987634391', picture: 'empty')
 Agent.create(first_name: 'Darlene', last_name: 'Memphis', email: 'darthememphis@gmail.com', number: '0987431489', picture: 'empty')

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_20_082106) do
+ActiveRecord::Schema.define(version: 2021_08_21_170527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,15 @@ ActiveRecord::Schema.define(version: 2021_08_20_082106) do
     t.index ["agent_id"], name: "index_properties_on_agent_id"
   end
 
+  create_table "rooms", force: :cascade do |t|
+    t.bigint "property_id", null: false
+    t.string "name"
+    t.integer "amount"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["property_id"], name: "index_rooms_on_property_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
@@ -62,4 +71,5 @@ ActiveRecord::Schema.define(version: 2021_08_20_082106) do
   add_foreign_key "appointments", "properties"
   add_foreign_key "appointments", "users"
   add_foreign_key "properties", "agents"
+  add_foreign_key "rooms", "properties"
 end
