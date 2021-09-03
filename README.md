@@ -1,5 +1,5 @@
 # Luxury View Backend
-This is the backend of the Luxury View Application. It features JWT authentication, as well as CRUD operations of the Property, Appointment, and Agent models
+This is the backend of the Luxury View Application. It features JWT authentication, as well as CRUD operations of the Property, Appointment, and Agent models. The frontend can be found [here](https://github.com/El-Potato-Slayer/Luxury-View-Frontend)
 
 ## Built with
 - Ruby
