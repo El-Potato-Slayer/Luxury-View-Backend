@@ -11,7 +11,7 @@ This is the backend of the Luxury View Application. It features JWT authenticati
 
 1. Open Terminal.
 2. Navigate to your desired location to download the contents of this repository.
-3. Run `git clone https://github.com/El-Potato-Slayer/luxury-view-backend.git`.
+3. Run `git clone https://github.com/El-Potato-Slayer/Luxury-View-Backend.git`.
 4. Run `cd luxury-view-backend`.
 5. Run `bundle install`
 6. Run `rails db:migrate`
