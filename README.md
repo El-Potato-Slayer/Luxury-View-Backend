@@ -21,8 +21,8 @@ This is the backend of the Luxury View Application. It features JWT authenticati
 
 **To run the tests, follow these steps:**
 1. Ensure you are in the project root directory
-2. Ensure you ran `npm install`
-3. run `npm run test`
+2. Ensure you ran `bundle install`
+3. run `rspec`
 
 ### Endpoints 
 When the machine is running on your local machine, the endpoints for the corresponding models will be:\
