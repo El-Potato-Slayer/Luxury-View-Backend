@@ -119,7 +119,6 @@ This is structure of the Body (JSON) for the creation or update of an Appointmen
 
 *Note: Since you can only create an appointment if the user is logged in, there's no need to include the user id*
 
-\
 
 
 ## Authors
@@ -133,7 +132,7 @@ This is structure of the Body (JSON) for the creation or update of an Appointmen
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/El-Potato-Slayer/bookstore/issues).
+Feel free to check the [issues page](https://github.com/El-Potato-Slayer/Luxury-View-Backend/issues).
 
 
 ## Show your support
