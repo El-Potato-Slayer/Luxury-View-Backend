@@ -11,7 +11,7 @@ class AgentsRepresenter
         last_name: agent.last_name,
         email: agent.email,
         number: agent.number,
-        picture: agent.picture,
+        picture: agent.picture
       }
     end
   end

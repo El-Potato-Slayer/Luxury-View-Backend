@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "Properties", type: :request do
+RSpec.describe 'Properties', type: :request do
   let!(:properties) { create_list(:property, 10) }
   let(:property_id) { properties.first.id }
-  describe "GET /properties" do
+  describe 'GET /properties' do
     before { get '/api/v1/properties' }
     it 'returns properties' do
       expect(json).not_to be_empty
@@ -14,7 +14,7 @@ RSpec.describe "Properties", type: :request do
       expect(response).to have_http_status(200)
     end
   end
-  describe "GET /properties/:id" do
+  describe 'GET /properties/:id' do
     before { get "/api/v1/properties/#{property_id}" }
     context 'when property exists' do
       it 'returns status code 200' do

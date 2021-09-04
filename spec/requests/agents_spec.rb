@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "Agents", type: :request do
+RSpec.describe 'Agents', type: :request do
   let!(:agents) { create_list(:agent, 5) }
   let!(:agent_id) { agents.first.id }
-  describe "GET /agents" do
+  describe 'GET /agents' do
     before { get '/api/v1/agents' }
     it 'returns agents' do
       expect(json).not_to be_empty
@@ -15,7 +15,7 @@ RSpec.describe "Agents", type: :request do
   end
 
   describe 'POST /agent' do
-    let(:valid_name) {
+    let(:valid_name) do
       {
         first_name: 'Jack',
         last_name: 'Jackson',
@@ -23,7 +23,7 @@ RSpec.describe "Agents", type: :request do
         number: '0786321456',
         picture: 'wwwwwwwwww'
       }
-    }
+    end
     context 'when the request is valid' do
       before { post '/api/v1/agents', params: valid_name }
       it 'creates a category' do

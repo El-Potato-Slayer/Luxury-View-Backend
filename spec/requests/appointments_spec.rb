@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe "Appointments", type: :request do
+RSpec.describe 'Appointments', type: :request do
   let(:user) {
     FactoryBot.create(:user, username: 'Tollie the Tottie', email: 'tollie@malotie', password: 'password',
                              first_name: 'Tollie', last_name: 'Tottie')
   }
   let!(:appointments) { create_list(:appointment, 10, user: user) }
   let(:appointment_id) { appointments.first.id }
-  describe "GET /appointments" do
+  describe 'GET /appointments' do
     before { get '/api/v1/appointments', headers: { 'Authorization' => AuthenticationTokenService.call(user.id) } }
     it 'returns appointments' do
       expect(json).not_to be_empty
@@ -19,7 +19,7 @@ RSpec.describe "Appointments", type: :request do
     end
   end
 
-  describe "GET /appointments/:id" do
+  describe 'GET /appointments/:id' do
     before {
       get "/api/v1/appointments/#{appointment_id}",
           headers: { 'Authorization' => AuthenticationTokenService.call(user.id) }

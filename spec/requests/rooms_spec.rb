@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe "Rooms", type: :request do
+RSpec.describe 'Rooms', type: :request do
   let!(:property) { create(:property) }
   let!(:rooms) { create_list(:room, 10, property: property) }
   let(:room_id) { rooms.first.id }
-  describe "GET /rooms" do
+  describe 'GET /rooms' do
     before { get '/api/v1/rooms' }
     it 'returns rooms' do
       expect(json).not_to be_empty
@@ -15,7 +15,7 @@ RSpec.describe "Rooms", type: :request do
       expect(response).to have_http_status(200)
     end
   end
-  describe "GET /rooms/:id" do
+  describe 'GET /rooms/:id' do
     before { get "/api/v1/rooms/#{room_id}" }
     context 'when room exists' do
       it 'returns status code 200' do
