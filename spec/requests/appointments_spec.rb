@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe 'Appointments', type: :request do
-  let(:user) {
+  let(:user) do
     FactoryBot.create(:user, username: 'Tollie the Tottie', email: 'tollie@malotie', password: 'password',
                              first_name: 'Tollie', last_name: 'Tottie')
-  }
+  end
   let!(:appointments) { create_list(:appointment, 10, user: user) }
   let(:appointment_id) { appointments.first.id }
   describe 'GET /appointments' do
@@ -20,10 +20,10 @@ RSpec.describe 'Appointments', type: :request do
   end
 
   describe 'GET /appointments/:id' do
-    before {
+    before do
       get "/api/v1/appointments/#{appointment_id}",
           headers: { 'Authorization' => AuthenticationTokenService.call(user.id) }
-    }
+    end
     context 'when appointment exists' do
       it 'returns status code 200' do
         expect(response).to have_http_status(200)
@@ -53,19 +53,19 @@ RSpec.describe 'Appointments', type: :request do
       }
     end
     context 'when request attributes are valid' do
-      before {
+      before do
         post '/api/v1/appointments', params: valid_attributes,
                                      headers: { 'Authorization' => AuthenticationTokenService.call(user.id) }
-      }
+      end
       it 'returns status code 201' do
         expect(response).to have_http_status(201)
       end
     end
     context 'when an invalid request' do
-      before {
+      before do
         post '/api/v1/appointments', params: {},
                                      headers: { 'Authorization' => AuthenticationTokenService.call(user.id) }
-      }
+      end
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
       end
@@ -78,11 +78,11 @@ RSpec.describe 'Appointments', type: :request do
   describe 'PUT /appointments/:id' do
     let(:new_date) { DateTime.now.utc }
     let(:valid_attributes) { { date: new_date } }
-    before {
+    before do
       put "/api/v1/appointments/#{appointment_id}",
           params: valid_attributes,
           headers: { 'Authorization' => AuthenticationTokenService.call(user.id) }
-    }
+    end
     context 'when the appointment exists' do
       it 'returns status code 204' do
         expect(response).to have_http_status(204)
@@ -104,10 +104,10 @@ RSpec.describe 'Appointments', type: :request do
   end
 
   describe 'DELETE /appointments/:id' do
-    before {
+    before do
       delete "/api/v1/appointments/#{appointment_id}",
              headers: { 'Authorization' => AuthenticationTokenService.call(user.id) }
-    }
+    end
     context 'when the appointment exists' do
       it 'returns status code 204' do
         expect(response).to have_http_status(204)
