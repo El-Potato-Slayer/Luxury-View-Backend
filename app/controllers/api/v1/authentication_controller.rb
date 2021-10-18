@@ -14,6 +14,19 @@ module Api
         end
       end
 
+      def profile
+        auth_header = request.headers['Authorization']
+        token = auth_header.split.last
+        payload = AuthenticationTokenService.decode(token)
+        if payload
+          current_user = User.find_by(id: payload[0]['user_id'])
+          # render json: current_user.to_json(except: [:id, :password_digest, :created_at, :updated_at])
+          render json: UserRepresenter.new(current_user).profile
+        else
+          render json: { error: 'Invalid token' }, status: :unauthorized
+        end
+      end
+
       private
 
       def user
